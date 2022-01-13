@@ -1,0 +1,33 @@
+<!--pages/Game/Game.wxml-->
+<view class="top">
+ <image src="../../photo/gameTop.jpg"></image>
+</view>
+<view class="body">
+ <!--游戏一-->
+ <navigator url="game1" open-type="navigate" hover-class="navigator-hover" class="container">
+  <view class="pageShow" ><image src="../../photo/ceshi.jpg"></image></view> 
+  <view class="showText">
+    <view class="gameName"><image src="../../icon/name-front.png"></image>
+    <text>名称：四渡赤水战役（上）</text> </view>
+    <view class="gameIntroduce"><image src="../../icon/flag.png"></image>
+    <text>介绍：在召开"遵义会议"后红军必须进行新的转移...</text>
+    </view>
+  </view>
+ </navigator>
+ <!--游戏二-->
+ <navigator url="game2" open-type="navigate" hover-class="navigator-hover" class="container">
+  <view class="pageShow" ><image src="../../photo/ceshi.jpg"></image></view> 
+  <view class="showText">
+    <view class="gameName"><image src="../../icon/name-front.png"></image>
+    <text>名称：四渡赤水战役（下）</text> </view>
+    <view class="gameIntroduce"><image src="../../icon/flag.png"></image>
+    <text>介绍：敌军的包围圈越来越大，我军的处境并不乐观...</text>
+    </view>
+  </view>
+ </navigator>
+</view>
+<view class="bottom">更多战役正在制作中，敬请期待</view>
+
+
+ 
+

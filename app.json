@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/Map/Map",
+    "pages/Shop/Shop",
+    "pages/Game/Game",
+    "pages/Mine/Mine",
+    "pages/Game/game1",
+    "pages/Game/SelectWar/game1-1"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "红途",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/Map/Map",
+        "text": "地图",
+        "iconPath": "icon/First-1.png",
+        "selectedIconPath": "icon/First-2.png"
+      },
+      {
+        "pagePath": "pages/Shop/Shop",
+        "text": "商城",
+        "iconPath": "icon/shop-1.png",
+        "selectedIconPath": "icon/shop-2.png"
+      },
+      {
+        "pagePath": "pages/Game/Game",
+        "text": "游戏",
+        "iconPath": "icon/game1.png",
+        "selectedIconPath": "icon/game2.png"
+      },
+      {
+        "pagePath": "pages/Mine/Mine",
+        "text": "我的",
+        "iconPath": "icon/mine-1.png",
+        "selectedIconPath": "icon/mine-2.png"
+      }
+    ],
+    "color": "rgba(81, 81, 81)",
+    "selectedColor": "#ff2121"
+  },
+  "style": "v2"
+}
