@@ -1,0 +1,1 @@
+"D:\wechat_devtools\installedFile\cli.bat" cloud functions deploy --e cloud1-1gls4mpg7c947519 --n quickstartFunctions --r --project "E:\wechat_miniprogram\YunDemo" --report_first --report
