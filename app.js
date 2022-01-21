@@ -1,4 +1,5 @@
 // app.js
+import './api/index'
 App({
   onLaunch: function () {
     if (!wx.cloud) {

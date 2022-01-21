@@ -1,2 +1,5 @@
 <!--pages/Map/Map.wxml-->
-<text>pages/Map/Map.wxml</text>
+<view>
+    <text>pages/Map/Map.wxml</text>
+    <button bindtap="tap">测试</button>
+</view>

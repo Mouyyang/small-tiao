@@ -22,6 +22,15 @@ Page({
 
   },
 
+  tap: function(){
+    wx.gameApi.getGameInfo()
+    .then(res=>{
+     console.log(res)
+    }).catch(res=>{
+     console.log(res)
+    })
+  },
+
   /**
    * 生命周期函数--监听页面显示
    */
