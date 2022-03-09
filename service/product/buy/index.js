@@ -14,10 +14,18 @@ exports.main = async (event, context) => {
   try{
     // 查询商品
     let price = 0
+      let product = {}
     await db.collection('product').doc(event.productId).get()
             .then(res=>{
                 price += res.data.price * event.number
+                product = res.data
             })
+      if (product.stock < event.number){
+          return {
+              success: false,
+              msg: "库存不足"
+          };
+      }
     // 写入订单
     await db.collection('order').add({
       data: {

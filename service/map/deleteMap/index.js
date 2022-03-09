@@ -11,12 +11,27 @@ exports.main = async (event, context) => {
     const wxContext = cloud.getWXContext();
     let {id} = event
     try{
-        db.collection('map').where({
+        let data = {}
+        await db.collection('map').where({
+            _id: id,
+            _openid: wxContext.OPENID
+        }).get().then(res=>{
+            data = res.data[0]
+        })
+        await db.collection('map').where({
             _id: id,
             _openid: wxContext.OPENID
         }).remove().then(res=>{
            console.log(res)
         })
+        if (data.pattern === "GUIDE" && data.groupId){
+            await db.collection('group').where({
+                groupId: data.groupId,
+                guide: wxContext.OPENID
+            }).remove().then(res=>{
+                console.log(res)
+            })
+        }
         return {
             success: true
         };

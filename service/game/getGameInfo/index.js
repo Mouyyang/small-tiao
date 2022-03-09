@@ -14,7 +14,8 @@ exports.main = async (event, context) => {
     let data = []
     let list = []
     await db.collection('game').where({
-        _openid: wxContext.OPENID
+        _openid: wxContext.OPENID,
+        item: event.item
     }).get().then(res=>{
         data = res.data
     })
@@ -25,7 +26,8 @@ exports.main = async (event, context) => {
         success: true,
         data: {
             totalInfo: data,
-            list: list
+            list: list,
+            item: event.item
         }
     };
   }catch(e){
@@ -34,5 +36,5 @@ exports.main = async (event, context) => {
         errMsg: e,
         errorCode: 500
     };
-  }      
+  }
 }

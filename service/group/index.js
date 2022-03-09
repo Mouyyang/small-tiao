@@ -7,6 +7,9 @@ const getManagerGroupDetailInfo = require('./getManagerGroupDetailInfo/index')
 const getShareableGroup = require('./getShareableGroup/index')
 const pullVisitorFromGroup = require('./pullVisitorFromGroup/index')
 const searchGroup = require('./searchGroup/index')
+const updateGroupInfo = require('./updateGroupInfo/index')
+const deleteGroup = require('./deleteGroup/index')
+const deleteGroupMember = require('./deleteGroupMember/index')
 
 exports.main = async (event, context) => {
     switch (event.type) {
@@ -28,5 +31,11 @@ exports.main = async (event, context) => {
             return await pullVisitorFromGroup.main(event, context);
         case 'searchGroup':
             return await searchGroup.main(event, context);
+        case 'updateGroupInfo':
+            return await updateGroupInfo.main(event, context)
+        case 'deleteGroup':
+            return await deleteGroup.main(event, context)
+        case 'deleteGroupMember':
+            return await deleteGroupMember.main(event, context)
     }
 }

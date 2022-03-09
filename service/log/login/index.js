@@ -41,7 +41,8 @@ exports.main = async (event, context) => {
           })
       }
       return {
-        success: true
+        success: true,
+        data: event.userInfo.data
       };
   }catch(e){
     return {

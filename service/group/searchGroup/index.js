@@ -13,7 +13,7 @@ exports.main = async (event, context) => {
         let data = []
         await db.collection('group').where($.or([
             {
-                groupId: event.key
+                groupId: parseInt(event.key)
             },
             {
                 name: db.RegExp({
