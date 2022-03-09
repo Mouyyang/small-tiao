@@ -9,3 +9,5 @@
   box-sizing: border-box;
 } 
 **/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";

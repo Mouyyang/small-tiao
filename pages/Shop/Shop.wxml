@@ -1,2 +1,53 @@
 <!--pages/Shop/Shop.wxml-->
-<text>pages/Shop/Shop.wxml</text>
+<view class="bg-img " style="background-image: url('../../icon/shop/shopTop.jpg');height: 700rpx; padding-top: 150rpx;">
+  <view class="search-container">
+      <view class="search">
+      <!--跳转到搜索页面-->
+          <input placeholder-class="search-placeholder"
+              type="text" placeholder="输入关键词搜索" disabled
+              value="{{name}}" bindinput="bindinput" bindtap="goSearch">
+          </input>
+          <view class="search-image">
+              <image mode="aspectFill" src="../../icon/shop/search.png"></image>
+          </view>
+      </view>
+      <view class="search-qr-container">
+      <!--二维码扫描-->
+          <view class="search-image">
+              <image mode="aspectFill" src="../../icon/shop/erweima.png"></image>
+          </view>
+      </view>
+  </view>
+
+<!--轮播图-->
+<view class="swiper-container">
+  <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular >
+    <swiper-item wx:for="{{swiperList}}" wx:key="id">
+      <image mode="aspectFill" bindtap="tapBanner"  src="{{item.showImages[0]}}" />
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="classify-container" >
+
+  <view class="flex"  wx:for="{{category}}" wx:key="id" style="height: 220rpx;">
+      <view class="flex-sub flex radius text-center justify-center align-center">
+        <view>{{item.name}}</view>
+      </view>
+      <view class="flex-treble  radius flex ">
+        <view class="cateimage" wx:for="{{item.product}}" wx:key="id"  wx:if="{{index<3}}">
+          <image src="{{item.showImages[0]}}"></image>
+        </view>
+      </view>
+      <view class="flex-sub flex radius text-center justify-center align-center">
+        <view>
+          <navigator url="subordinate/classify" open-type="redirect">更多>></navigator>
+        </view> 
+      </view>
+    </view>
+</view>
+
+
+</view>
+
+

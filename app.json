@@ -1,17 +1,19 @@
 {
     "pages": [
-        "pages/Map/Map",
         "pages/Shop/Shop",
+        "pages/Map/Map",
         "pages/Game/Game",
         "pages/Mine/Mine",
         "pages/Game/game1",
-        "pages/Game/SelectWar/game1-1"
+        "pages/Game/SelectWar/game1-1",
+        "pages/Shop/subordinate/classify"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "红途",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
     },
     "tabBar": {
         "list": [
@@ -43,6 +45,5 @@
         "color": "rgba(81, 81, 81)",
         "selectedColor": "#ff2121"
     },
-    "style": "v2",
     "sitemapLocation": "sitemap.json"
 }

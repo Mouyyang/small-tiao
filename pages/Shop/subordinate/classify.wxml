@@ -1,0 +1,62 @@
+<!--pages/Shop/search.wxml-->
+<view class="bg-img" style="background-image: url('../../../icon/shop/shopTop.jpg');height: 800rpx; padding-top: 80rpx;">
+  <view class="margin-bottom-lg text-lg text-white" bindtap="back">
+    <text class="cuIcon-back lg "></text><text>返回</text>
+  </view>
+    
+
+  <view class="VerticalBox">
+    <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 100rpx)">
+      <view class="cu-item {{index==TabCur?'text-red cur':''}}" wx:for="{{list}}" wx:key='_id' bindtap='tabSelect' data-id="{{index}}">
+        {{item.name}}
+      </view>
+    </scroll-view>
+    <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 100rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+      <view class="padding-top padding-lr" wx:for="{{list}}" wx:key="_id" id="main-{{index}}" >
+        <view class='cu-bar solid-bottom bg-white'>
+          <view class='action'>
+            <text class='cuIcon-title text-green'></text> 分类-{{item.name}} </view>
+        </view>
+        <view class="flex" wx:for="{{item.product}}" wx:key='_id'>
+          <view class="flex-sub bg-grey padding-sm">
+              <image style="width: 220rpx; height: 220rpx;"
+              mode='aspectFill'
+              src="{{item.showImages[0]}}"
+              />
+          </view>
+          <view class="flex-twice  padding-sm">
+            <view>
+              <text class="text-black text-lg">{{item.name}}</text>
+            </view>
+            <view class="padding-tb-xl">
+              <text class="text-red text-lg ">{{item.price}}</text>
+            </view>
+              <van-stepper value="{{ 0 }}" min="0" step='1' integer/>
+          </view>
+        </view>
+
+      </view>
+    </scroll-view>
+  </view>
+
+
+  <view class="cu-bar bg-white tabbar border shop">
+      <button class="action" open-type="contact">
+        <view class="cuIcon-service text-green">
+          <view class="cu-tag badge"></view>
+        </view>
+        客服
+      </button>
+      <view class="action">
+        <view class="cuIcon-cart">
+          <view class="cu-tag badge">99</view>
+        </view>
+        购物车
+      </view>
+      <view class="bg-orange submit">加入购物车</view>
+      <view class="bg-red submit">立即订购</view>
+  </view>
+
+
+
+</view>
