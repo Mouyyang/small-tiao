@@ -5,7 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      gameData: [
+        {
+            cover: "cloud://cloud1-9g0ua85lf5864afc.636c-cloud1-9g0ua85lf5864afc-1309106846/photo/ceshi.jpg",
+            name: "四渡赤水战役（上）",
+            introduce: "在召开\"遵义会议\"后红军必须进行新的转移..."
+        },
+        {
+          cover: "cloud://cloud1-9g0ua85lf5864afc.636c-cloud1-9g0ua85lf5864afc-1309106846/photo/ceshi.jpg",
+          name: "四渡赤水战役（下）",
+          introduce: "敌军的包围圈越来越大，我军的处境并不乐观..."
+        }
+      ]
   },
 
   /**

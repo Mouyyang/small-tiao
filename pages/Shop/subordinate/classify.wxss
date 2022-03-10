@@ -1,9 +1,11 @@
+@import "../../../colorui/main.wxss";
+@import "../../../colorui/icon.wxss";
 /* pages/Shop/search.wxss */
 .VerticalNav.nav {
     width: 200rpx;
     white-space: initial;
   }
-  
+
   .VerticalNav.nav .cu-item {
     width: 100%;
     text-align: center;
@@ -13,7 +15,7 @@
     height: 50px;
     position: relative;
   }
-  
+
   .VerticalNav.nav .cu-item.cur {
     background-color: #f1f1f1;
   }

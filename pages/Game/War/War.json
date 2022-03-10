@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "zoomImgByView": "../../../components/zoomImgByView/zoomImgByview"
+  },
+  "navigationStyle": "custom"
+}

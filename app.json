@@ -1,12 +1,15 @@
 {
     "pages": [
         "pages/Shop/Shop",
-        "pages/Map/Map",
-        "pages/Game/Game",
+        "pages/Shop/subordinate/classify",
         "pages/Mine/Mine",
-        "pages/Game/game1",
-        "pages/Game/SelectWar/game1-1",
-        "pages/Shop/subordinate/classify"
+        "pages/Game/Game",
+        "pages/Map/Map",
+        "pages/Game/War/War",
+        "pages/Game/SelectWarItem/SelectWarItem",
+        "pages/Shop/Search/Search",
+        "pages/Shop/Detail/Detail",
+        "pages/Shop/PayTips/PayTips"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -45,5 +48,6 @@
         "color": "rgba(81, 81, 81)",
         "selectedColor": "#ff2121"
     },
+    "style": "v2",
     "sitemapLocation": "sitemap.json"
 }

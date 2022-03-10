@@ -1,0 +1,11 @@
+<image class="back" bind:tap="back" src="../../../icon/back_android.png"></image>
+<view class="wrapper">
+    <view class="icon">
+        <image class="img" src="{{isFail ? '../../../icon/failed_toast.png' : '../../../icon/color-success.png'}}"></image>
+        <text class="img-tips">{{isFail ? '支付失败' : '支付成功'}}</text>
+        <text style="display: {{isFail && msg !== '' ? 'block' : 'none'}}" class="reason">{{msg}}</text>
+    </view>
+    <view class="butt-container">
+        <button class="butt" bind:tap="back">关闭</button>
+    </view>
+</view>

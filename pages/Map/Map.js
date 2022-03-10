@@ -23,12 +23,17 @@ Page({
   },
 
   tap: function(){
-    wx.gameApi.getGameInfo()
-    .then(res=>{
-     console.log(res)
-    }).catch(res=>{
-     console.log(res)
+    wx.mapApi.getMap({
+      pattern: "SELF"
+    }).then(res=>{
+      console.log(res);
     })
+      // wx.groupApi.deleteGroupMember({
+      //   id: "617ef50c622841980a86f9ec6b4d3e7f",
+      //   removeId: "ooMCS5eg-OhmSFIXBnLC987rgvrg"
+      // }).then(res=>{
+      //   console.log(res);
+      // })
   },
 
   /**

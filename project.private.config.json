@@ -1,0 +1,113 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "",
+                    "pathName": "pages/Game/War/War",
+                    "query": "game=1&item=0",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Game/Game",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Game/SelectWarItem/SelectWarItem",
+                    "query": "game=0",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Shop/Search/Search",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Shop/Detail/Detail",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Shop/PayTips/PayTips",
+                    "query": "isFail=true&msg=库存不足",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Game/SelectWarItem/SelectWarItem",
+                    "query": "game=0",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Shop/Search/Search",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Shop/Search/Search",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Shop/Detail/Detail",
+                    "query": "id=a2dfc9c8622758fa016a0da455df878c",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Shop/PayTips/PayTips",
+                    "query": "isFail=false&msg=",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Game/Game",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Game/SelectWarItem/SelectWarItem",
+                    "query": "game=0",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/Game/War/War",
+                    "query": "game=0&item=0&itemNumber=3",
+                    "scene": null,
+                    "launchMode": "default"
+                }
+            ]
+        }
+    }
+}

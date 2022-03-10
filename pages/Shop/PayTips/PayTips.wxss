@@ -1,0 +1,48 @@
+/* pages/Shop/PayTips/PayTips.wxss */
+.wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon .img{
+    width: 250rpx;
+    height: 250rpx;
+    margin-top: 250rpx;
+}
+
+.icon .img-tips{
+    margin-top: 50rpx;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.icon .reason{
+    margin-top: 25rpx;
+    font-size: 1rem;
+}
+
+.butt-container{
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+}
+
+.butt{
+    margin-top: 250rpx;
+}
+
+.back{
+    position: fixed;
+    margin-top: 85rpx;
+    left: 38rpx;
+    width: 55rpx;
+    height: 55rpx;
+    z-index: 10;
+}

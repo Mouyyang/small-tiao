@@ -1,0 +1,20 @@
+<!--pages/Game/game1.wxml-->
+<!--<image class="back" bind:tap="back" src="../../../icon/back_android.png"></image>-->
+<view class="body">
+ <!--游戏一-->
+ <navigator wx:for="{{warItemData[gameIndex]}}" wx:key="index" bind:tap="entryGame" data-game-index="{{gameIndex}}" data-item="{{index}}" data-item-number="{{warItemData[gameIndex].length}}" open-type="navigate" hover-class="navigator-hover" class="container">
+  <view class="pageShow" ><image mode="aspectFill" src="{{openStatus[index] ? item.cover : item.coverOff}}"></image></view>
+  <view class="showText">
+      <view class="left">
+          <view class="warName">{{item.warName}}</view>
+          <view class="warIntroduce">{{item.warIntroduce}}</view>
+      </view>
+      <view class="right">
+              <text wx:if="{{openStatus[index]}}" class="action">去闯关</text>
+              <text wx:else class="action-off">去解锁</text>
+      </view>
+  </view>
+ </navigator>
+
+
+</view>

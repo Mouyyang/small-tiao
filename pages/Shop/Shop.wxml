@@ -1,53 +1,35 @@
 <!--pages/Shop/Shop.wxml-->
-<view class="bg-img " style="background-image: url('../../icon/shop/shopTop.jpg');height: 700rpx; padding-top: 150rpx;">
-  <view class="search-container">
-      <view class="search">
-      <!--跳转到搜索页面-->
-          <input placeholder-class="search-placeholder"
-              type="text" placeholder="输入关键词搜索" disabled
-              value="{{name}}" bindinput="bindinput" bindtap="goSearch">
-          </input>
-          <view class="search-image">
-              <image mode="aspectFill" src="../../icon/shop/search.png"></image>
-          </view>
-      </view>
-      <view class="search-qr-container">
-      <!--二维码扫描-->
-          <view class="search-image">
-              <image mode="aspectFill" src="../../icon/shop/erweima.png"></image>
-          </view>
-      </view>
+<view class="bg-img container">
+  <view class="input-container" bind:tap="search">
+            <image class="input-search__icon" src="../../icon/search.png"></image>
+            <text>请输入查找内容</text>
   </view>
 
 <!--轮播图-->
 <view class="swiper-container">
   <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular >
-    <swiper-item wx:for="{{swiperList}}" wx:key="id">
-      <image mode="aspectFill" bindtap="tapBanner"  src="{{item.showImages[0]}}" />
+    <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="id">
+      <image bind:tap="toDetail" data-id="{{item._id}}"  mode="aspectFill"  src="{{item.showImages[0]}}" />
     </swiper-item>
   </swiper>
 </view>
 
 <view class="classify-container" >
-
-  <view class="flex"  wx:for="{{category}}" wx:key="id" style="height: 220rpx;">
-      <view class="flex-sub flex radius text-center justify-center align-center">
-        <view>{{item.name}}</view>
-      </view>
-      <view class="flex-treble  radius flex ">
-        <view class="cateimage" wx:for="{{item.product}}" wx:key="id"  wx:if="{{index<3}}">
-          <image src="{{item.showImages[0]}}"></image>
+    <view class="sorts" wx:for="{{category}}">
+        <view class="sortItem">
+            <view class="top">
+                <text class="sort-name">{{item.name}}</text>
+                <image bind:tap="more" class="more" src="../../icon/next.png"></image>
+            </view>
+            <view class="productInfo">
+                <view bind:tap="toDetail" data-id="{{item._id}}" wx:for="{{item.product}}" wx:if="{{index <= 2}}" class="productItem">
+                    <image mode="aspectFill" class="product-image" src="{{item.showImages[0]}}"></image>
+                    <text class="product-name">{{item.name}}</text>
+                </view>
+            </view>
         </view>
-      </view>
-      <view class="flex-sub flex radius text-center justify-center align-center">
-        <view>
-          <navigator url="subordinate/classify" open-type="redirect">更多>></navigator>
-        </view> 
-      </view>
     </view>
 </view>
 
 
 </view>
-
-

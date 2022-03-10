@@ -1,0 +1,19 @@
+<!--pages/Game/SelectWar/game1-1.wxml-->
+<image class="back" bind:tap="back" src="../../../icon/back_android-white.png"></image>
+<view class="background">
+    <view class="tip" wx:if="{{showTip}}" >
+        <text style="color: {{isSuccess ? '#5b8c00' : '#ad2102'}}">{{tip}}</text>
+    </view>
+    <view class="cover-box">
+        <zoomImgByView img_src="{{currentImage}}" view_width="{{viewWidth}}" view_height="{{viewHeight}}" />
+        <view class="choice_button">
+            <button  wx:for="{{choices}}" class="choice_button_item" data-choice-index="{{index}}" bindtap="callFunc">{{item.text}}</button>
+        </view>
+    </view>
+    <view class="introduce" wx:if="{{isIntroduceShow}}">
+        <view class="introduce_pass">
+            <text class="introduce_pass_text" bind:tap="next">跳过 >></text>
+        </view>
+        <text style="font-size: {{ currentIntroduce.length >= 250 ? '1rem' : '1.2rem' }}" class="introduce_content">{{currentIntroduce}}</text>
+    </view>
+</view>

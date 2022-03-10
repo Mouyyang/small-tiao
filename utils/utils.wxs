@@ -1,0 +1,7 @@
+var splitFunc = function(content, key, before) {
+    return before ? content.split(key)[0] : content.split(key)[1];
+}
+
+module.exports = {
+    splitFunc: splitFunc
+}

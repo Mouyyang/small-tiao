@@ -1,0 +1,38 @@
+<image class="back" bind:tap="back" src="../../../icon/back_android.png"></image>
+<view class="container">
+    <view class="swiper">
+        <swiper indicator-dots="{{true}}"
+                autoplay="{{false}}">
+                        <block wx:for="{{detailInfo.showImages}}" wx:key="*this">
+            <swiper-item>
+                <image mode="aspectFill" class="swiper-item"
+                       src="{{item}}"></image>
+            </swiper-item>
+                        </block>
+        </swiper>
+    </view>
+    <view class="info_container">
+        <view class="simple_info">
+            <view class="simple_info-left">
+                <text class="product_name">{{detailInfo.name}}</text>
+                <view class="product_price">
+                    <text class="price">{{detailInfo.price}}</text>
+                    <text class="symbol">元/{{detailInfo.symbol}}</text>
+                </view>
+            </view>
+            <text class="button-buy" bind:tap="tapBuy">购买</text>
+        </view>
+        <view class="choice_number">
+            <text class="choice-describe">购买数量</text>
+            <view class="choice-button">
+                <view class="choice-decrease" bind:tap="decrease" style="background-color: {{number >= 2 ? '#f1f1f1' : '#f8f8f8'}}">-</view>
+                <text class="choice-number">{{number}}</text>
+                <view class="choice-increase" bind:tap="increase" style="background-color: {{number <= 4 ? '#f1f1f1' : '#f8f8f8'}}">+</view>
+            </view>
+        </view>
+        <view class="introduce">
+            <text class="introduce-title">商品介绍</text>
+            <text class="introduce-content">{{detailInfo.introduce}}</text>
+        </view>
+    </view>
+</view>

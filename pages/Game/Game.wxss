@@ -24,26 +24,26 @@
 .showText{
   background-color:rgb(212, 158, 158);
   width: 100%;
-  height: 115rpx;
+  height: 125rpx;
   position: absolute;
   bottom: 0rpx;
-  border-radius: 5%;
+  border-radius: 15rpx;
 }
 
 .gameName image{
-  width: 130rpx;
-  height: 130rpx;
+  width: 32rpx;
+  height: 32rpx;
   position: relative;
-  top: -30rpx;
-  left: -15rpx;
+  top: 14rpx;
+  left: 20rpx;
 }
 
 .gameName text{
   position: relative;
-  top: -90rpx;
+  top: 8rpx;
   font-size: 0.5rem;
   color: white;
-  left: -50rpx;
+  left: 30rpx;
 }
 
 .gameIntroduce {
@@ -51,19 +51,19 @@
 }
 
 .gameIntroduce image{
-  width: 130rpx;
-  height: 130rpx;
+  width: 36rpx;
+  height: 36rpx;
   position: relative;
-  top: -120rpx;
-  left: -15rpx;
+  top: 22rpx;
+  left: 20rpx;
 }
 
 .gameIntroduce text{
   position: relative;
-  top: -190rpx;
+  top: 12rpx;
   font-size: 0.5rem;
   color: white;
-  left: -50rpx;
+  left: 30rpx;
 }
 
 .bottom{
@@ -72,4 +72,5 @@
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 40rpx;
 }

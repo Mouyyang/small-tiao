@@ -1,0 +1,39 @@
+<wxs src="../../../utils/utils.wxs" module ="utils"/>
+<image class="back" bind:tap="back" src="../../../icon/back_android-white.png"></image>
+<view id="cover">
+    <view class="container">
+        <view class="input-container">
+            <image class="input-search__icon" src="../../../icon/search.png"></image>
+            <input 	bindfocus="onFocus" confirm-type="search" bindconfirm="search" bindinput="inputData" model:value="{{inputValue}}" class="search-input" placeholder-class="search-placeholder" auto-focus  placeholder="请输入关键词"></input>
+            <image bind:tap="clearInputValue" style="display: {{ inputValue === '' ? 'none' : 'block' }}" class="input-search__clear" src="../../../icon/close_fill.png"></image>
+        </view>
+        <view style="display: {{!showKeyword  ? 'none' : 'block' }}" class="keyword">
+            <view wx:for="{{searchData}}" bindtap="toDetail" data-id="{{item._id}}" class="keyword-item">
+                <image class="keyword-item__icon" src="../../../icon/search.png"></image>
+                <text class="keyword-item__content">
+                    <text>{{utils.splitFunc(item.name, inputValue, true)}}</text>
+                    <text class="keyword-item__content__key">{{inputValue}}</text>
+                    <text>{{utils.splitFunc(item.name, inputValue, false)}}</text>
+                </text>
+            </view>
+        </view>
+        <view style="display: {{showKeyword  ? 'none' : 'block' }}" class="info">
+            <view wx:for="{{searchData}}"  bindtap="toDetail" data-id="{{item._id}}" class="product-container">
+                <text class="product-title">Results</text>
+                <view class="products">
+                    <view class="product-item">
+                        <image mode="aspectFill" src="{{item.showImages[0]}}" class="product-image"></image>
+                        <view class="product-detail">
+                            <text class="product-name">{{item.name}}</text>
+                            <view class="product-price">
+                                <text class="product-price__symbol">￥</text>
+                                <text class="product-price__number">{{item.price}}</text>
+                            </view>
+                        </view>
+                        <image src="../../../icon/next.png" class="product_next"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

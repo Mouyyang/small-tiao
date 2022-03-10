@@ -79,5 +79,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  search(){
+    wx.navigateTo({
+      url: "/pages/Shop/Search/Search"
+    })
+  },
+  more(){
+    wx.navigateTo({
+      url: "subordinate/classify"
+    })
+  },
+  toDetail(e){
+    wx.navigateTo({
+      url: `/pages/Shop/Detail/Detail?id=${e.currentTarget.dataset.id}`
+    })
   }
 })
