@@ -18,6 +18,8 @@ exports.main = async (event, context) => {
             data: updateInfo
         }).then(res=>{
             console.log(res)
+        }).catch(res=>{
+            console.log(res);
         })
         return {
             success: true

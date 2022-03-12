@@ -23,17 +23,24 @@ Page({
   },
 
   tap: function(){
-    wx.mapApi.getMap({
-      pattern: "SELF"
-    }).then(res=>{
-      console.log(res);
-    })
-      // wx.groupApi.deleteGroupMember({
-      //   id: "617ef50c622841980a86f9ec6b4d3e7f",
-      //   removeId: "ooMCS5eg-OhmSFIXBnLC987rgvrg"
-      // }).then(res=>{
-      //   console.log(res);
-      // })
+    // wx.mapApi.addMap({
+      // pattern: "GUIDE",
+      // mapList: [1,2,3],
+      // memo: "memo"
+    // }).then(res=>{
+      // console.log(res);
+    // })
+    // wx.groupApi.addIntoGroup({
+      groupId: "1646970095616"
+    // }).then(res=>{
+      // console.log(res)
+    // })
+      wx.groupApi.deleteGroupMember({
+        id: "54ad1eea6229c86c155acfdf3a12b658",
+        removeId: "ooMCS5RKBAm06BLM66u6brl1YNgg"
+      }).then(res=>{
+        console.log(res);
+      })
   },
 
   /**

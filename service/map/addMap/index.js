@@ -29,7 +29,8 @@ exports.main = async (event, context) => {
       case "GUIDE":
         let maps = []
         await db.collection('map').where({
-          _openid: wxContext.OPENID
+          _openid: wxContext.OPENID,
+          pattern: "GUIDE"
         }).get().then(res=>{
           maps = res.data
         })
@@ -42,8 +43,8 @@ exports.main = async (event, context) => {
         let groupId = new Date().getTime();
         let guide = wxContext.OPENID
         let member = []
-        let name = event.name
-        let introduce = event.introduce
+        let name = event.name || '班级-' + groupId
+        let introduce = event.introduce || '暂时未编辑简介'
         await db.collection('group').add({
           data: {
             groupId,

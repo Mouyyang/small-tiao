@@ -10,6 +10,7 @@ const searchGroup = require('./searchGroup/index')
 const updateGroupInfo = require('./updateGroupInfo/index')
 const deleteGroup = require('./deleteGroup/index')
 const deleteGroupMember = require('./deleteGroupMember/index')
+const getGroup = require('./getGroup/index')
 
 exports.main = async (event, context) => {
     switch (event.type) {
@@ -37,5 +38,7 @@ exports.main = async (event, context) => {
             return await deleteGroup.main(event, context)
         case 'deleteGroupMember':
             return await deleteGroupMember.main(event, context)
+        case 'getGroup':
+            return await getGroup.main(event, context)
     }
 }

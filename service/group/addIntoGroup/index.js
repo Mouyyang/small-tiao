@@ -12,13 +12,41 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext();
   const $ = db.command
   try{
-    await db.collection('group').where({
-        groupId: event.groupId
-    }).update({
-        data: {
-            member: $.push([wxContext.OPENID])
-        }
-    })
+      let members = []
+      let guide = 0
+      let groupId = typeof event.groupId === 'number' ? event.groupId : parseInt(event.groupId) 
+      await db.collection('group').where({
+          groupId
+      }).get().then(res=>{
+          members = res.data[0].member
+          guide = res.data[0].guide
+      }).catch(res=>{
+          console.log(res);
+      })
+      if (guide === wxContext.OPENID){
+          return {
+              success: false,
+              msg: "不能加入自己创建的班级"
+          }
+      }
+      if (!members.includes(wxContext.OPENID)){
+          await db.collection('group').where({
+              groupId
+          }).update({
+              data: {
+                  member: $.push([wxContext.OPENID])
+              }
+          }).then(res=>{
+              console.log(res);
+          }).catch(res=>{
+              console.log(res);
+          })
+      }else {
+          return {
+              success: false,
+              msg: "已加入当前班级"
+          }
+      }
     return {
         success: true
     };
@@ -28,5 +56,5 @@ exports.main = async (event, context) => {
         errMsg: e,
         errorCode: 500
     };
-  }    
+  }
 }

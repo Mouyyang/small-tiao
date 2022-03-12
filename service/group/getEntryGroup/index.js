@@ -27,6 +27,7 @@ exports.main = async (event, context) => {
     data.forEach(item => {
         delete item.included
     })
+
     return {
         success: true,
         data

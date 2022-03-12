@@ -79,6 +79,7 @@ module.exports = {
     },
     // 修改班级信息
     async updateGroupInfo({id, updateInfo: {name, introduce}}) {
+        console.log(1);
         return await wx.cloud.callFunction({
             name: 'group',
             data: {
@@ -111,6 +112,14 @@ module.exports = {
                 type: "deleteGroupMember",
                 removeId,
                 id
+            }
+        }).then(res => res.result)
+    },
+    async getGroup(){
+        return await wx.cloud.callFunction({
+            name: 'group',
+            data: {
+                type: "getGroup"
             }
         }).then(res => res.result)
     }
